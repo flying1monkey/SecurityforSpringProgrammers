@@ -35,6 +35,13 @@ public class User
     @JoinTable(joinColumns = @JoinColumn(name="user_id"), inverseJoinColumns = @JoinColumn(name="role_id"))
     private Collection<Role> roles;
 
+    //Methods
+    public void addToCollection(Role newRole)
+    {
+        this.roles.add(newRole);
+    }
+
+    //Getters and setters
     public long getId()
     {
         return id;

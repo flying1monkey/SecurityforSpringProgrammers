@@ -16,6 +16,11 @@ public class Role
     @ManyToMany(mappedBy = "roles", fetch = FetchType.LAZY)
     private Collection<User> users;
 
+    public void addToCollection(User newUser)
+    {
+        this.users.add(newUser);
+    }
+
     public long getId()
     {
         return id;
