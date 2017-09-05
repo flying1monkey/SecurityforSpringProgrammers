@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="base :: SecurityHead"></th:block>
+    <title>Index page</title>
+</head>
+<body>
+<th:block th:replace="base :: SecurityNav"></th:block>
+
+<div class="container">
+    <h2>Insecure page</h2>
+    <a href="/secure">Secure page</a>
+</div>
+<th:block th:replace="base :: SecurityJS"></th:block>
+
+</body>
+</html>

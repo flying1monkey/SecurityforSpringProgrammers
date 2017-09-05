@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="base :: SecurityHead"></th:block>
+    <title>New User</title>
+</head>
+<body>
+<th:block th:replace="base :: SecurityNav"></th:block>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col col-sm-8">
+            <h2>New user!</h2>
+            <form action="#" th:action="@{/newuser}" th:object="${newuser}" method="post">
+                <div class="row justify-content-center">
+                    <div class="col col-sm-6 form-group">
+                        <input type="hidden" th:field="*{id}"/>
+                        <label for="fname">First Name: </label>
+                        <input type="text" class="form-control" th:field="*{firstName}" id="fname" placeholder="Jane" autofocus="autofocus"/>
+                        <!--<span th:if="${#fields.hasErrors('schoolName')}" th:errors="*{schoolName}"/>-->
+
+                    </div>
+                    <div class="col col-sm-6 form-group">
+                        <label for="lname">Last Name: </label>
+                        <input type="text" class="form-control" th:field="*{lastName}" id="lname" placeholder="Doe"/>
+                        <!--<span th:if="${#fields.hasErrors('degree')}" th:errors="*{degree}"/>-->
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col col-sm-12 form-group">
+                        <label for="email">Email Address: </label>
+                        <input type="email" class="form-control" th:field="*{email}" id="email" placeholder="jane@doe.com"/>
+                        <!--<span th:if="${#fields.hasErrors('gradYear')}" th:errors="*{gradYear}"/>-->
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col col-sm-6 form-group">
+                        <!--<label for="uname">User Name: </label>-->
+                        <label >User Name: </label>
+                        <input type="text" class="form-control" th:field="*{username}" />
+                        <!--<span th:if="${#fields.hasErrors('schoolName')}" th:errors="*{schoolName}"/>-->
+
+                    </div>
+                    <div class="col col-sm-6 form-group">
+                        <label>Password: </label>
+                        <!--<label for="pass">Password: </label>-->
+                        <input type="password" class="form-control" th:field="*{password}" />
+                        <!--<span th:if="${#fields.hasErrors('degree')}" th:errors="*{degree}"/>-->
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col col-sm-6">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<th:block th:replace="base :: SecurityJS"></th:block>
+
+</body>
+</html>

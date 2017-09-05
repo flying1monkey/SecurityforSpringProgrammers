@@ -1,0 +1,5 @@
+.container {
+    background-color: white;
+    background-image: repeating-linear-gradient(purple,white);
+    padding-top: 100px;
+}
