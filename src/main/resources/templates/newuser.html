@@ -4,12 +4,12 @@
     <th:block th:replace="base :: SecurityHead"></th:block>
     <title>New User</title>
 </head>
-<body>
+<body class="bg">
 <th:block th:replace="base :: SecurityNav"></th:block>
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col col-sm-8">
+        <div class="col col-sm-10">
             <h2>New user!</h2>
             <form action="#" th:action="@{/newuser}" th:object="${newuser}" method="post">
                 <div class="row justify-content-center">
@@ -49,15 +49,15 @@
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col col-sm-6">
+                    <div class="col col-sm-12">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
+    <th:block th:replace="base :: SecurityJS"></th:block>
 </div>
-<th:block th:replace="base :: SecurityJS"></th:block>
 
 </body>
 </html>

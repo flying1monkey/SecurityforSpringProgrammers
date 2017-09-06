@@ -55,7 +55,7 @@ public class HomeController
     }
 
     @PostMapping("/newuser")
-    public String submitUser(@ModelAttribute("newuser") User newUser)
+    public String submitUser(@ModelAttribute("newuser") User newUser, Model model)
     {
         //Collection<Role> test = newUser.getRoles();
 
@@ -73,7 +73,8 @@ public class HomeController
         //save role
         roleRepo.save(gettingRole);
         //save user
-        //userRepo.save(newUser);
+        userRepo.save(newUser);
+        model.addAttribute("newuser", newUser);
         return "addeduser";
     }
 }

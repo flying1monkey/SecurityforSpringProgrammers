@@ -3,6 +3,7 @@ package edu.berliner.securityforspringprogrammers.models;
 import edu.berliner.securityforspringprogrammers.models.Role;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
 
 @Entity
@@ -36,6 +37,11 @@ public class User
     private Collection<Role> roles;
 
     //Methods
+    public User()
+    {
+        roles = new ArrayList<Role>();
+    }
+
     public void addToCollection(Role newRole)
     {
         this.roles.add(newRole);

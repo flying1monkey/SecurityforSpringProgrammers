@@ -1,6 +1,7 @@
 package edu.berliner.securityforspringprogrammers.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
 
 @Entity
@@ -16,6 +17,10 @@ public class Role
     @ManyToMany(mappedBy = "roles", fetch = FetchType.LAZY)
     private Collection<User> users;
 
+    public Role()
+    {
+        users = new ArrayList<User>();
+    }
     public void addToCollection(User newUser)
     {
         this.users.add(newUser);

@@ -6,25 +6,29 @@
 
     <title>Login page</title>
 </head>
-<body>
+<body class="bg">
 <th:block th:replace="base :: SecurityNav"></th:block>
 
 <div class="container">
-    <div th:if="${param.error}">
-        Invalid username and password.
-    </div>
-    <div th:if="${param.logout}">
-        You have been logged out.
-    </div>
-    <form th:action="@{/login}" method="post">
-        <div>
-            <lable>User name: <input type="text" name="username"/></lable>
+    <div class="row justify-content-center">
+        <div class="col col-sm-10">
+            <div th:if="${param.error}">
+                Invalid username and password.
+            </div>
+            <div th:if="${param.logout}">
+                You have been logged out.
+            </div>
+            <form th:action="@{/login}" method="post">
+                <div>
+                    <lable>User name: <input type="text" name="username"/></lable>
+                </div>
+                <div>
+                    <lable>Password: <input type="text" name="password"/></lable>
+                </div>
+                <div><input type="submit" value="Sign In"/></div>
+            </form>
         </div>
-        <div>
-            <lable>Password: <input type="text" name="password"/></lable>
-        </div>
-        <div><input type="submit" value="Sign In"/></div>
-    </form>
+    </div>
 </div>
 <th:block th:replace="base :: SecurityJS"></th:block>
 

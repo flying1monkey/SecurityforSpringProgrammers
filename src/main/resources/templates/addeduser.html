@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"/>
-    <title>User added</title>
+    <th:block th:replace="base :: SecurityHead"></th:block>
+    <title>New User</title>
 </head>
-<body>
-User added
+<body class="bg">
+<th:block th:replace="base :: SecurityNav"></th:block>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col col-sm-10">
+            <h2>You've added a new user: <span th:text="${newuser.firstName}+ ' '+ ${newuser.lastName}"/></h2>
+            <p>Email: <span th:text="${newuser.email}"/></p>
+            <p>Username: <span th:text="${newuser.username}"/></p>
+            <p>Roles: <span th:each="role:${newuser.roles}"><th:block th:text="${role.role}"/></span></p>
+        </div>
+    </div>
+</div>
+<th:block th:replace="base :: SecurityJS"></th:block>
+
 </body>
 </html>

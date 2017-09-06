@@ -5,13 +5,16 @@
 
     <title>Secure page</title>
 </head>
-<body>
+<body class="bg">
 <th:block th:replace="base :: SecurityNav"></th:block>
 
 <div class="container">
-<h3>Secure page</h3>
-    <a href="/logout">Log out</a>
-    <!--<a href="<c:url value="/logout" />">Logout</a>-->
+    <div class="row justify-content-center">
+        <div class="col col-sm-10">
+            <h3>Secure page</h3>
+            <a href="/logout">Log out</a>
+        </div>
+    </div>
 </div>
 <th:block th:replace="base :: SecurityJS"></th:block>
 </body>
