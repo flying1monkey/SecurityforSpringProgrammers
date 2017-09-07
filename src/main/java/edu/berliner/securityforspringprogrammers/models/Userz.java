@@ -1,14 +1,12 @@
 package edu.berliner.securityforspringprogrammers.models;
 
-import edu.berliner.securityforspringprogrammers.models.Role;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
 
 @Entity
 @Table(name="USER_DATA")
-public class User
+public class Userz
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -37,7 +35,7 @@ public class User
     private Collection<Role> roles;
 
     //Methods
-    public User()
+    public Userz()
     {
         roles = new ArrayList<Role>();
     }
@@ -45,6 +43,12 @@ public class User
     public void addToCollection(Role newRole)
     {
         this.roles.add(newRole);
+    }
+    public void addRole(Role r)
+    {
+        System.out.println("the role is "+r.toString());
+        this.roles.add(r);
+
     }
 
     //Getters and setters

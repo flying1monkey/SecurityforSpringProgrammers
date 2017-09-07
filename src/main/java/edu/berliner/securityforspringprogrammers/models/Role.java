@@ -15,13 +15,13 @@ public class Role
     private String role;
 
     @ManyToMany(mappedBy = "roles", fetch = FetchType.LAZY)
-    private Collection<User> users;
+    private Collection<Userz> users;
 
     public Role()
     {
-        users = new ArrayList<User>();
+        users = new ArrayList<Userz>();
     }
-    public void addToCollection(User newUser)
+    public void addToCollection(Userz newUser)
     {
         this.users.add(newUser);
     }
@@ -46,12 +46,12 @@ public class Role
         this.role = role;
     }
 
-    public Collection<User> getUsers()
+    public Collection<Userz> getUsers()
     {
         return users;
     }
 
-    public void setUsers(Collection<User> users)
+    public void setUsers(Collection<Userz> users)
     {
         this.users = users;
     }

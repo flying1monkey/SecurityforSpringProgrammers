@@ -12,7 +12,7 @@
 </head>
 <body class="bg">
 <th:block th:fragment="SecurityNav">
-    <!--<nav class="navbar navbar-expand-lg navbar-light bg-light">-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <nav class="navbar navbar-light bg-light">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -24,10 +24,11 @@
                 <a class="nav-item nav-link" th:href="@{/secure}">Secure</a>
                 <a class="nav-item nav-link" th:href="@{/newuser}">New User</a>
             </div>
-            <div class="navbar-nav navbar-right" >
+            <div class="navbar-nav justify-content-end" >
                 <a class="nav-item nav-link" href="/logout">Log out</a>
             </div>
         <!--</div>-->
+    </nav>
     </nav>
 </th:block>
 <div class="container">

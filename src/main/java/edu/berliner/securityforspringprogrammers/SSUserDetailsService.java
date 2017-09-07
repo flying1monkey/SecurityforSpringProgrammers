@@ -1,7 +1,7 @@
 package edu.berliner.securityforspringprogrammers;
 
 import edu.berliner.securityforspringprogrammers.models.Role;
-import edu.berliner.securityforspringprogrammers.models.User;
+import edu.berliner.securityforspringprogrammers.models.Userz;
 import edu.berliner.securityforspringprogrammers.repositories.UserRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -25,12 +25,15 @@ public class SSUserDetailsService implements UserDetailsService
         this.userRepository=userRepository;
     }
 
+    /*
+     *This is for debugging!  Otherwise it should only throw an exception-don't specify that the username's not available
+     */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException
     {
         try
         {
-            User user = userRepository.findByUsername(username);
+            Userz user = userRepository.findByUsername(username);
             if(user == null)
             {
                 System.out.println("user not found with the provided username "+user.getUsername().toString());
@@ -46,7 +49,7 @@ public class SSUserDetailsService implements UserDetailsService
         }
     }
 
-    private Set<GrantedAuthority> getAuthorities(User user)
+    private Set<GrantedAuthority> getAuthorities(Userz user)
     {
         Set<GrantedAuthority> authorities = new HashSet<GrantedAuthority>();
         for(Role role : user.getRoles())
